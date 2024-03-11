@@ -6,10 +6,13 @@
     <title>Main page</title>
 </head>
 <body>
+<form action="manager" method="POST">
+    <input type="submit" value="Выйти" id="logoutButton">
+</form>
 <h2 style="font-size: 12px; font-weight: normal;">${generationTime}</h2>
 <h2 style="font-size: 16px;">${currentDirPath}</h2>
 <hr class="separator" />
-<c:url value="index" var="upUrl">
+<c:url value="manager" var="upUrl">
     <c:param name="path" value="${parentDirPath}"/>
 </c:url>
 <a href="${upUrl}">Вверх</a>
@@ -19,6 +22,13 @@
         border: 2px solid rosybrown;
         background: wheat;
         text-align: left;
+    }
+
+    #logoutButton {
+        float: right; /* Выравнивание кнопки вправо */
+        width: 128px; /* Ширина кнопки */
+        height: 48px;
+        font-size: 18px;
     }
 </style>
 <table>
@@ -33,7 +43,7 @@
                 <c:set var="itemName" value="${listElement.name()}"/>
                 <c:choose>
                     <c:when test="${fn:endsWith(itemName, '/')}">
-                        <c:url value="index" var="downUrl">
+                        <c:url value="manager" var="downUrl">
                             <c:param name="path" value="${listElement.path()}"/>
                         </c:url>
                         <a href="${downUrl}">${listElement.name()}</a>
