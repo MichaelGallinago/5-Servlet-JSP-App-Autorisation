@@ -16,27 +16,6 @@ import java.util.Date;
 
 @WebServlet(urlPatterns = {"/manager"})
 public class FileManagerServlet extends HttpServlet {
-/*
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String pathFromRequest = request.getParameter("path");
-        String currentDirPath = (pathFromRequest == null ?
-                new File(".").getCanonicalPath() : pathFromRequest).replace('\\', '/');
-
-        request.setAttribute("currentDirPath", currentDirPath);
-        request.setAttribute("list", FileSystemItemsService.GetItemsFromDirectory(currentDirPath));
-
-        String parentDirPath = new File(currentDirPath).getParent();
-        request.setAttribute("parentDirPath", parentDirPath == null ? currentDirPath : parentDirPath);
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
-
-        request.setAttribute("generationTime", dateFormat.format(new Date()));
-        request.getRequestDispatcher("manager.jsp").forward(request, response);
-    }
- */
 
     @Override
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)

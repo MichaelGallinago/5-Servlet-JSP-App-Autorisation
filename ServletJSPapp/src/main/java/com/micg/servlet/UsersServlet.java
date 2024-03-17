@@ -43,9 +43,8 @@ public class UsersServlet extends HttpServlet {
 
             // Создание новой папки для пользователя
             File folder = new File("C:\\Users\\micha\\fileManager\\" + login);
-            boolean isCreationSuccess = folder.mkdir();
-            //Скорее всего никогда не будет false, но если будет нехватать памяти или что-то ещё, то сработает
-            if (!isCreationSuccess) {
+
+            if (!folder.exists() && !folder.mkdir()) {
                 httpServletResponse.setContentType("text/html;charset=utf-8");
                 httpServletResponse.getWriter().println("Случилась ошибка при создании папки, попробуйте ещё раз");
                 return;
