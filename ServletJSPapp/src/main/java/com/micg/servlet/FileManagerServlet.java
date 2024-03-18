@@ -1,6 +1,5 @@
 package com.micg.servlet;
 
-import com.micg.servlet.service.AccountService;
 import com.micg.servlet.service.FileSystemItemsService;
 import com.micg.servlet.utilities.ServletUtilities;
 import jakarta.servlet.ServletException;
@@ -55,6 +54,6 @@ public class FileManagerServlet extends HttpServlet {
         session.removeAttribute("login");
         session.removeAttribute("pass");
         String currentURL = httpServletRequest.getRequestURL().toString();
-        httpServletResponse.sendRedirect(ServletUtilities.makeNewUrl(currentURL, "/log"));
+        httpServletResponse.sendRedirect(ServletUtilities.makeRedirectUrl(currentURL, "/log"));
     }
 }

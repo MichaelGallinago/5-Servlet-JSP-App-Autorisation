@@ -43,6 +43,6 @@ public class SessionsServlet extends HttpServlet {
         session.setAttribute("pass", password);
 
         String currentURL = httpServletRequest.getRequestURL().toString();
-        httpServletResponse.sendRedirect(ServletUtilities.makeNewUrl(currentURL, "/manager"));
+        httpServletResponse.sendRedirect(ServletUtilities.makeRedirectUrl(currentURL, "/manager"));
     }
 }

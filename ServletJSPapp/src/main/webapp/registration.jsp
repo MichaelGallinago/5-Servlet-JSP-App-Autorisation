@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>L2.1</title>
+    <title>Registration</title>
 </head>
 <body>
-<p>Регистрация нового пользователя системы</p>
+<p>Введите данные для регистрации в системе</p>
 
 <form action="registration" method="POST">
     Email: <input type="text" name="email"/>

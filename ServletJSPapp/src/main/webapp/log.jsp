@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>L2.1</title>
+    <title>Login</title>
 </head>
 <body>
 <p>Вход в систему</p>

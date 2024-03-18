@@ -51,7 +51,7 @@ public class UsersServlet extends HttpServlet {
             }
 
             String currentURL = httpServletRequest.getRequestURL().toString();
-            httpServletResponse.sendRedirect(ServletUtilities.makeNewUrl(currentURL, "/manager"));
+            httpServletResponse.sendRedirect(ServletUtilities.makeRedirectUrl(currentURL, "/manager"));
         } else {
             httpServletResponse.setContentType("text/html;charset=utf-8");
             httpServletResponse.getWriter().println("Пользователь с таким логином уже есть в системе");
