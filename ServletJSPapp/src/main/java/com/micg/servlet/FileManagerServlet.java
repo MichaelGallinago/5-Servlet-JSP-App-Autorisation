@@ -22,13 +22,6 @@ public class FileManagerServlet extends HttpServlet {
             throws IOException, ServletException {
 
         String login = (String)httpServletRequest.getSession().getAttribute("login");
-        String pass = (String)httpServletRequest.getSession().getAttribute("pass");
-
-        if (AccountService.getUserByLogin(login) == null || !AccountService.getUserByLogin(login).password().equals(pass)) {
-            String currentURL = httpServletRequest.getRequestURL().toString();
-            httpServletResponse.sendRedirect(ServletUtilities.makeNewUrl(currentURL, "/log"));
-            return;
-        }
 
         String currentDirPath;
         String pathToUserDir = "C:\\Users\\micha\\fileManager\\" + login;
